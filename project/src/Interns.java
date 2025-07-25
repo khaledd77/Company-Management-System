@@ -1,3 +1,3 @@
-public class Interns extends Employee implements Department {
+public class Interns extends Employee  {
     
 }
