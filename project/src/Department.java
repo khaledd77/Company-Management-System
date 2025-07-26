@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 public class Department {
+    
     protected String departmentName;
     protected int departmentId;
     protected String departmentHead;
@@ -8,10 +9,11 @@ public class Department {
 
     public Department() {
     }
-    public Department(String departmentName, int departmentId, String departmentHead) {
+    public Department(String departmentName, int departmentId, String departmentHead , int baseSalary) {
         this.departmentName = departmentName;
         this.departmentId = departmentId;
         this.departmentHead = departmentHead;
+        this.baseSalary = baseSalary;
     }
     public void setDepartmentId(int departmentId) {
         this.departmentId = departmentId;

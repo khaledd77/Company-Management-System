@@ -46,11 +46,7 @@ public abstract class Employee {
     public int getNumberOfHoursWorked() {
         return numberOfHoursWorked;
     }
-    // public Department getDepartment()
-    // {
-    //     return department;
-    // }
-    
+   
     public abstract float calculateSalary();
 
     public void employeeDetails() {

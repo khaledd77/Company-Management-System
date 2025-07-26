@@ -1,21 +1,28 @@
 public class Developer extends Employee  {
     
     protected Department department;
+    protected int numberofProjects;
     public Developer()
     {
         
     }
-    public Developer(int i , int a , String n , int sal , Department department) 
+    public Developer(int id , int age , String name , int salary , Department department) 
     {
-        super(i,a,n);
+        super(id,age,name);
        
         this.department = department;
         department.addEmployee(this);
 
         
     }
+    public void setNumberOfProjects(int numberofProjects) {
+        this.numberofProjects = numberofProjects;
+    }
+    public int getNumberOfProjects() {
+        return numberofProjects;
+    }
     @Override public float calculateSalary() {
-        return department.getBaseSalary()*numberOfHoursWorked;
+        return department.getBaseSalary()*numberOfHoursWorked*numberofProjects;
     }
     @Override public void employeeDetails()
     {
@@ -24,5 +31,6 @@ public class Developer extends Employee  {
         System.out.println("Base Salary: " + department.getBaseSalary());
         System.out.println("Number of Hours Worked: " + getNumberOfHoursWorked());
         System.out.println("Calculated Salary: " + calculateSalary());
+        System.out.println("Number of Projects: " + getNumberOfProjects());
     }
 }
