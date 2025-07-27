@@ -2,17 +2,21 @@ public class Developer extends Employee  {
     
     protected Department department;
     protected int numberofProjects;
+    private static int developerCount = 0;
     public Developer()
     {
-        
+        developerCount++;
     }
     public Developer(int id , int age , String name , String nationality, int salary , Department department) 
     {
         super(id,age,name,nationality);
         this.department = department;
         department.addEmployee(this);
-
+        developerCount++;
         
+    }
+    public static int getDeveloperCount() {
+        return developerCount;
     }
     public void setNumberOfProjects(int numberofProjects) {
         this.numberofProjects = numberofProjects;

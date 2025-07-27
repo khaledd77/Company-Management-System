@@ -2,6 +2,8 @@ public class HourlyDevolper extends Employee {
     protected Department department;
     protected int numberOfHoursWorked;
     protected float hourlyRate;
+    private static int developerCount = 0;
+
 
     public HourlyDevolper() {
     
@@ -12,11 +14,16 @@ public class HourlyDevolper extends Employee {
         this.numberOfHoursWorked = numberOfHoursWorked;
         this.hourlyRate = hourlyRate;
         department.addEmployee(this);
+        developerCount++;
+    }
+    public int getDeveloperCount() {
+        return developerCount;
     }
     public void setNumberOfHoursWorked(int numberOfHoursWorked) {
         this.numberOfHoursWorked = numberOfHoursWorked;
     }
-    
+
+
     public int getNumberOfHoursWorked() {
         return numberOfHoursWorked;
     }

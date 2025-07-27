@@ -3,7 +3,9 @@ public class Interns extends Employee  {
     protected String mentorName;
     protected int UniLevel;
     protected Department department;
+    private static int internCount = 0;
     public Interns() {
+        internCount++;
     }
     public Interns (int id , int age , String name , String nationality, String internshipDuration, String mentorName , int UniLevel, Department department)
     {
@@ -13,6 +15,10 @@ public class Interns extends Employee  {
         this.UniLevel = UniLevel;
         this.department = department;
         department.addEmployee(this);
+        internCount++;
+    }
+    public static int getInternCount() {
+        return internCount;
     }
     public void setInternshipDuration(String internshipDuration) {
         this.internshipDuration = internshipDuration;

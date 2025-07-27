@@ -2,8 +2,11 @@ public class Manager extends Employee  {
     
     protected int numberOfTeamsManaged;
     protected float hourlyRate;
+    private static int developerCount = 0;
+
 
     public Manager() {
+        developerCount++;
     }
     public Manager(int id, int age, String name, String nationality, Department department, int numberOfTeamsManaged, float hourlyRate) {
         super(id, age, name, nationality);
@@ -11,6 +14,10 @@ public class Manager extends Employee  {
         this.numberOfTeamsManaged = numberOfTeamsManaged;
         this.hourlyRate = hourlyRate;
         department.addEmployee(this);
+        developerCount++;
+    }
+    public static int getDeveloperCount() {
+        return developerCount;
     }
     public void setNumberOfTeamsManaged(int numberOfTeamsManaged) {
         this.numberOfTeamsManaged = numberOfTeamsManaged;
