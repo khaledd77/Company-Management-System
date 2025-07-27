@@ -5,9 +5,9 @@ public class Interns extends Employee  {
     protected Department department;
     public Interns() {
     }
-    public Interns (int id , int age , String name , String internshipDuration, String mentorName , int UniLevel, Department department)
+    public Interns (int id , int age , String name , String nationality, String internshipDuration, String mentorName , int UniLevel, Department department)
     {
-        super(id,age,name);
+        super(id,age,name,nationality);
         this.internshipDuration = internshipDuration;
         this.mentorName = mentorName;
         this.UniLevel = UniLevel;
@@ -33,6 +33,6 @@ public class Interns extends Employee  {
         return UniLevel;
     }
     @Override public float calculateSalary() {
-        return department.getBaseSalary() * numberOfHoursWorked * 0.3f; 
+        return department.getBaseSalary() * 0.3f; 
     }
 }

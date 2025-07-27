@@ -2,16 +2,17 @@ public abstract class Employee {
     protected String name;
     protected int id;
     protected int age;
-    protected int numberOfHoursWorked;
+    protected String nationality;
+    protected Department department;
     
     public Employee() {
 
     }
-    public Employee (int id , int age , String name ) {
+    public Employee (int id , int age , String name , String nationality) {
         this.id = id;
         this.age = age;
         this.name = name;
-        
+        this.nationality = nationality;
     }
     
 
@@ -27,8 +28,8 @@ public abstract class Employee {
     {
         this.age = age;
     }
-    public void setNumberOfHoursWorked(int numberOfHoursWorked) {
-        this.numberOfHoursWorked = numberOfHoursWorked;
+    public void setNationality(String nationality) {
+        this.nationality = nationality;
     }
 
     public String getname ()
@@ -43,11 +44,13 @@ public abstract class Employee {
     {
         return age;
     }
-    public int getNumberOfHoursWorked() {
-        return numberOfHoursWorked;
+
+    public String getNationality() {
+        return nationality;
     }
-   
+
     public abstract float calculateSalary();
+    
 
     public void employeeDetails() {
         System.out.println("Name: " + getname());
