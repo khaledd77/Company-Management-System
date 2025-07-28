@@ -1,7 +1,9 @@
-public class Developer extends Employee implements AssignProjects {
+public class Developer extends Employee implements AssignProjects , Promote {
 
     private static int developerCount = 0;
-    
+    private String title="Developer";
+    private float bonus=1.f;
+
     public Developer()
     {
         developerCount++;
@@ -19,7 +21,7 @@ public class Developer extends Employee implements AssignProjects {
     }
     
     @Override public float calculateSalary() {
-        return department.getBaseSalary()*assignedProjectsCount;
+        return department.getBaseSalary()*assignedProjectsCount*bonus;
     }
     @Override public void assignProjects(String projectName) {
         
@@ -35,10 +37,19 @@ public class Developer extends Employee implements AssignProjects {
         }
         return String.join(", ", assignedProjects);
     }
+    @Override public void promotion(String title , float Bonus) {
+        this.title = title;
+        this.bonus = Bonus;
+        System.out.println(getName() + " has been promoted to " + title + " with a bonus of " + Bonus);
+    }
+    @Override public String getTitle() {
+        return title;
+    }
     @Override public void employeeDetails()
     {
         super.employeeDetails();
         System.out.println("Department: " + department.getDepartmentName());
+        System.out.println("Title: " + getTitle());
         System.out.println("Base Salary: " + department.getBaseSalary());
         System.out.println("Calculated Salary: " + calculateSalary());
         System.out.println("Number of Projects: " + assignedProjectsCount);
