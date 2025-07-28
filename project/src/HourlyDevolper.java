@@ -1,8 +1,7 @@
 public class HourlyDevolper extends Employee implements AssignProject {
-    protected Department department;
-    protected int numberOfHoursWorked;
-    protected float hourlyRate;
-    
+   
+    private int numberOfHoursWorked;
+    private float hourlyRate;
     private static int developerCount = 0;
 
 

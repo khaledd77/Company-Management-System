@@ -1,7 +1,7 @@
 public class Manager extends Employee implements AssignProject {
     
-    protected int numberOfTeamsManaged;
-    protected float hourlyRate;
+    private int numberOfTeamsManaged;
+    private float hourlyRate;
     private static int developerCount = 0;
 
 

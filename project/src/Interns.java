@@ -1,8 +1,7 @@
 public class Interns extends Employee implements AssignProject  {
-    protected String internshipDuration;
-    protected String mentorName;
-    protected int UniLevel;
-    protected Department department;
+    private String internshipDuration;
+    private String mentorName;
+    private int UniLevel;
     private static int internCount = 0;
     public Interns() {
         internCount++;
