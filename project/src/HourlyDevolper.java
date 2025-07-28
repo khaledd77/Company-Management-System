@@ -1,4 +1,4 @@
-public class HourlyDevolper extends Employee implements AssignProject {
+public class HourlyDevolper extends Employee implements AssignProjects {
    
     private int numberOfHoursWorked;
     private float hourlyRate;
@@ -8,8 +8,8 @@ public class HourlyDevolper extends Employee implements AssignProject {
     public HourlyDevolper() {
     
     }
-    public HourlyDevolper(int id, int age, String name, String nationality, Department department, int numberOfHoursWorked, float hourlyRate) {
-        super(id, age, name, nationality);
+    public HourlyDevolper(String name , int id , int age , SEX sex , String nationality, Department department, int numberOfHoursWorked, float hourlyRate) {
+        super(name, id, age, sex, nationality);
         this.department = department;
         this.numberOfHoursWorked = numberOfHoursWorked;
         this.hourlyRate = hourlyRate;
@@ -37,12 +37,19 @@ public class HourlyDevolper extends Employee implements AssignProject {
     @Override public float calculateSalary() {
         return numberOfHoursWorked * hourlyRate;
     }
-    @Override public void assignProject(String projectName) {
-        this.assignedProject = projectName;
-        System.out.println(getname() + " has been assigned to project: " + projectName);
+    @Override public void assignProjects(String projectName) {
+        
+            assignedProjects.add(projectName);
+            System.out.println(getname() + " has been assigned to project: " + projectName);
+            assignedProjectsCount++;
+       
+
     }
-    @Override public String getAssignedProject() {
-        return assignedProject;
+    @Override public String getAssignedProjects() {
+        if(assignedProjects.isEmpty()){
+            return "No Projects Assigned";
+        }
+        return String.join(", ", assignedProjects);
     }
     @Override public void employeeDetails() {
         super.employeeDetails();
@@ -51,7 +58,7 @@ public class HourlyDevolper extends Employee implements AssignProject {
         System.out.println("Hourly Rate: " + getHourlyRate());
         System.out.println("Calculated Salary: " + calculateSalary());
         System.out.println("Number of Hours Worked: " + getNumberOfHoursWorked());
-        System.out.println("Assigned Project: " + getAssignedProject());
+        System.out.println("Assigned Project: " + getAssignedProjects());
         System.out.println("-----------------------------");
     }
 }

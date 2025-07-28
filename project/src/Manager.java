@@ -1,4 +1,4 @@
-public class Manager extends Employee implements AssignProject {
+public class Manager extends Employee implements AssignProjects {
     
     private int numberOfTeamsManaged;
     private float hourlyRate;
@@ -8,8 +8,8 @@ public class Manager extends Employee implements AssignProject {
     public Manager() {
         developerCount++;
     }
-    public Manager(int id, int age, String name, String nationality, Department department, int numberOfTeamsManaged, float hourlyRate) {
-        super(id, age, name, nationality);
+    public Manager(String name , int id , int age , SEX sex , String nationality, Department department, int numberOfTeamsManaged, float hourlyRate) {
+        super(name, id, age, sex, nationality);
         this.department = department;
         this.numberOfTeamsManaged = numberOfTeamsManaged;
         this.hourlyRate = hourlyRate;
@@ -34,20 +34,29 @@ public class Manager extends Employee implements AssignProject {
     @Override public float calculateSalary() {
         return numberOfTeamsManaged * hourlyRate * department.getBaseSalary(); 
     }
-    @Override public void assignProject(String projectName) {
-        this.assignedProject = projectName;
-        System.out.println(getname() + " has been assigned to project: " + projectName);
+     @Override public void assignProjects(String projectName) {
+        
+            assignedProjects.add(projectName);
+            System.out.println(getname() + " has been assigned to project: " + projectName);
+            assignedProjectsCount++;
+       
+
     }
-    @Override public String getAssignedProject() {
-        return assignedProject;
+    @Override public String getAssignedProjects() {
+        if(assignedProjects.isEmpty()){
+            return "No Projects Assigned";
+        }
+        return String.join(", ", assignedProjects);
     }
     @Override public void employeeDetails() {
         super.employeeDetails();
         System.out.println("Department: " + department.getDepartmentName());
         System.out.println("Base Salary: " + department.getBaseSalary());
         System.out.println("Hourly Rate: " + getHourlyRate());
+        System.out.println("Assigned Projects: " + getAssignedProjects());
         System.out.println("Calculated Salary: " + calculateSalary());
         System.out.println("Number of Teams Managed: " + getNumberOfTeamsManaged());
+        System.out.println("-----------------------------");
     }
     
 

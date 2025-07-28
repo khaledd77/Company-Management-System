@@ -1,17 +1,14 @@
-import java.util.ArrayList;
-public class Developer extends Employee implements AssignProject {
+public class Developer extends Employee implements AssignProjects {
 
     private static int developerCount = 0;
-    private int assignedProjectCount = 0;
-    private ArrayList<String> assignedProjects = new ArrayList<>();
     
     public Developer()
     {
         developerCount++;
     }
-    public Developer(int id , int age , String name , String nationality,  Department department) 
+    public Developer(String name , int id , int age , SEX sex , String nationality,  Department department) 
     {
-        super(id,age,name,nationality);
+        super(name, id, age, sex, nationality);
         this.department = department;
         department.addEmployee(this);
         developerCount++;
@@ -22,17 +19,17 @@ public class Developer extends Employee implements AssignProject {
     }
     
     @Override public float calculateSalary() {
-        return department.getBaseSalary()*assignedProjectCount;
+        return department.getBaseSalary()*assignedProjectsCount;
     }
-    @Override public void assignProject(String projectName) {
+    @Override public void assignProjects(String projectName) {
         
             assignedProjects.add(projectName);
             System.out.println(getname() + " has been assigned to project: " + projectName);
-            assignedProjectCount++;
+            assignedProjectsCount++;
        
 
     }
-    @Override public String getAssignedProject() {
+    @Override public String getAssignedProjects() {
         if(assignedProjects.isEmpty()){
             return "No Projects Assigned";
         }
@@ -44,8 +41,8 @@ public class Developer extends Employee implements AssignProject {
         System.out.println("Department: " + department.getDepartmentName());
         System.out.println("Base Salary: " + department.getBaseSalary());
         System.out.println("Calculated Salary: " + calculateSalary());
-        System.out.println("Number of Projects: " + assignedProjectCount);
-        System.out.println("Assigned Project: " + getAssignedProject());
+        System.out.println("Number of Projects: " + assignedProjectsCount);
+        System.out.println("Assigned Project: " + getAssignedProjects());
         System.out.println("-----------------------------");
     }
 }
