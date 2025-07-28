@@ -40,7 +40,7 @@ public class HourlyDevolper extends Employee implements AssignProjects {
     @Override public void assignProjects(String projectName) {
         
             assignedProjects.add(projectName);
-            System.out.println(getname() + " has been assigned to project: " + projectName);
+            System.out.println(getName() + " has been assigned to project: " + projectName);
             assignedProjectsCount++;
        
 

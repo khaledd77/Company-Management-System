@@ -25,19 +25,19 @@ public abstract class Employee {
     }
     
 
-    public void setname(String name)
+    public void setName(String name)
     {
         this.name = name;
     }
-    public void set_sex(SEX sex)
+    public void setSex(SEX sex)
     {
         this.sex = sex;
     }
-    public void set_id(int id)
+    public void setId(int id)
     {
         this.id = id;
     }
-    public void set_age(int age)
+    public void setAge(int age)
     {
         this.age = age;
     }
@@ -45,19 +45,19 @@ public abstract class Employee {
         this.nationality = nationality;
     }
 
-    public String getname ()
+    public String getName ()
     {
         return name;
     }
-    public int get_id ()
+    public int getId ()
     {
         return id;
     }
-    public int get_age ()
+    public int getAge ()
     {
         return age;
     }
-    public SEX get_sex()
+    public SEX getSex()
     {
         return sex;
     }
@@ -71,10 +71,10 @@ public abstract class Employee {
     
 
     public void employeeDetails() {
-        System.out.println("Name: " + getname());
-        System.out.println("Sex: " + get_sex());
-        System.out.println("ID: " + get_id());
-        System.out.println("Age: " + get_age());
+        System.out.println("Name: " + getName());
+        System.out.println("Sex: " + getSex());
+        System.out.println("ID: " + getId());
+        System.out.println("Age: " + getAge());
         System.out.println("Nationality: " + getNationality());
         
     }
