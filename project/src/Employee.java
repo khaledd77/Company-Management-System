@@ -4,6 +4,7 @@ public abstract class Employee {
     protected int age;
     protected String nationality;
     protected Department department;
+    protected String assignedProject;
     
     public Employee() {
 
@@ -49,6 +50,7 @@ public abstract class Employee {
         return nationality;
     }
 
+
     public abstract float calculateSalary();
     
 
@@ -56,6 +58,8 @@ public abstract class Employee {
         System.out.println("Name: " + getname());
         System.out.println("ID: " + get_id());
         System.out.println("Age: " + get_age());
+        System.out.println("Nationality: " + getNationality());
+        
     }
 
     

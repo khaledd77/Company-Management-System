@@ -1,4 +1,4 @@
-public class Manager extends Employee  {
+public class Manager extends Employee implements AssignProject {
     
     protected int numberOfTeamsManaged;
     protected float hourlyRate;
@@ -33,6 +33,13 @@ public class Manager extends Employee  {
     }
     @Override public float calculateSalary() {
         return numberOfTeamsManaged * hourlyRate * department.getBaseSalary(); 
+    }
+    @Override public void assignProject(String projectName) {
+        this.assignedProject = projectName;
+        System.out.println(getname() + " has been assigned to project: " + projectName);
+    }
+    @Override public String getAssignedProject() {
+        return assignedProject;
     }
     @Override public void employeeDetails() {
         super.employeeDetails();

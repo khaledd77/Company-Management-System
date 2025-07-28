@@ -1,4 +1,4 @@
-public class Developer extends Employee  {
+public class Developer extends Employee implements AssignProject {
     
     protected Department department;
     protected int numberofProjects;
@@ -27,6 +27,13 @@ public class Developer extends Employee  {
     @Override public float calculateSalary() {
         return department.getBaseSalary()*numberofProjects;
     }
+    @Override public void assignProject(String projectName) {
+        this.assignedProject = projectName;
+        System.out.println(getname() + " has been assigned to project: " + projectName);
+    }
+    @Override public String getAssignedProject() {
+        return assignedProject;
+    }
     @Override public void employeeDetails()
     {
         super.employeeDetails();
@@ -34,5 +41,7 @@ public class Developer extends Employee  {
         System.out.println("Base Salary: " + department.getBaseSalary());
         System.out.println("Calculated Salary: " + calculateSalary());
         System.out.println("Number of Projects: " + getNumberOfProjects());
+        System.out.println("Assigned Project: " + getAssignedProject());
+        System.out.println("-----------------------------");
     }
 }

@@ -1,7 +1,8 @@
-public class HourlyDevolper extends Employee {
+public class HourlyDevolper extends Employee implements AssignProject {
     protected Department department;
     protected int numberOfHoursWorked;
     protected float hourlyRate;
+    
     private static int developerCount = 0;
 
 
@@ -37,6 +38,13 @@ public class HourlyDevolper extends Employee {
     @Override public float calculateSalary() {
         return numberOfHoursWorked * hourlyRate;
     }
+    @Override public void assignProject(String projectName) {
+        this.assignedProject = projectName;
+        System.out.println(getname() + " has been assigned to project: " + projectName);
+    }
+    @Override public String getAssignedProject() {
+        return assignedProject;
+    }
     @Override public void employeeDetails() {
         super.employeeDetails();
         System.out.println("Department: " + department.getDepartmentName());
@@ -44,5 +52,7 @@ public class HourlyDevolper extends Employee {
         System.out.println("Hourly Rate: " + getHourlyRate());
         System.out.println("Calculated Salary: " + calculateSalary());
         System.out.println("Number of Hours Worked: " + getNumberOfHoursWorked());
+        System.out.println("Assigned Project: " + getAssignedProject());
+        System.out.println("-----------------------------");
     }
 }
