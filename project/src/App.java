@@ -229,7 +229,20 @@ public class App {
                     // Logic to assign project
                     break;
                 case 4:
-                    // Logic to promote employee
+                    System.out.println("Please enter the name and the department of the employee you want to promote : ");
+                    String nameString = scanner.next();
+                    String deptName = scanner.next();
+                    for(Map.Entry<String, Department> entry : departments.entrySet())
+                    {
+                        if(deptName==entry.getValue().departmentName)
+                        {
+                              
+                        }
+                        
+                          
+                    }
+                    }
+
                     break;
                 case 5:
                     System.out.println("Exiting...");
