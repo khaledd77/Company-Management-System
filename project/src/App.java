@@ -234,14 +234,29 @@ public class App {
                     String deptName = scanner.next();
                     for(Map.Entry<String, Department> entry : departments.entrySet())
                     {
-                        if(deptName==entry.getValue().departmentName)
+                        if(deptName.equalsIgnoreCase(entry.getValue().departmentName))
                         {
-                              
+                              for(Employee e : entry.getValue().employees)
+                              {
+                                   if(e.name.equalsIgnoreCase(nameString))
+                                   {
+                                        System.out.println("Enter the new title : ");
+                                        String newTitle = scanner.next();
+                                        System.out.println("Enter the bonus salary : ");
+                                        int bonusSalary = scanner.nextInt();
+                                        if (e instanceof Promote) {
+                                            ((Promote) e).promotion(newTitle, bonusSalary);
+                                        } else {
+                                            System.out.println("This employee type cannot be promoted.");
+                                        }
+                                   }
+                              }
+       
                         }
                         
                           
                     }
-                    }
+                    
 
                     break;
                 case 5:

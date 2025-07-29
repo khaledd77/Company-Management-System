@@ -55,7 +55,6 @@ public class Manager extends Employee implements AssignProjects , Promote {
         super.employeeDetails();
         System.out.println("Department: " + department.getDepartmentName());
         System.out.println("Title: " + getTitle());
-        System.out.println("Base Salary: " + department.getBaseSalary());
         System.out.println("Assigned Projects: " + getAssignedProjects());
         System.out.println("Calculated Salary: " + calculateSalary());
         System.out.println("Number of Teams Managed: " + getNumberOfTeamsManaged());

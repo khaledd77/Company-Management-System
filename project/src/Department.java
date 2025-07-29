@@ -4,7 +4,7 @@ public class Department {
     protected String departmentName;
     protected String departmentHead;
     protected int baseSalary;
-    private ArrayList<Employee> employees= new ArrayList<>();
+     ArrayList<Employee> employees= new ArrayList<>();
 
     public Department() {
     }

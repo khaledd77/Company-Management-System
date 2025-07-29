@@ -40,7 +40,7 @@ public class Intern extends Employee implements AssignProjects , Promote  {
         return UniLevel;
     }
     @Override public float calculateSalary() {
-        return department.getBaseSalary() * 0.3f * bonus; 
+        return department.getBaseSalary() * 0.25f * bonus; 
     }
     @Override public void assignProjects(String projectName) {
         
