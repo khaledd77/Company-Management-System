@@ -21,7 +21,10 @@ public class Developer extends Employee implements AssignProjects , Promote {
     }
     
     @Override public float calculateSalary() {
+        if(assignedProjectsCount!=0)
         return department.getBaseSalary()*assignedProjectsCount*bonus;
+        else
+        return department.getBaseSalary()*bonus;
     }
     @Override public void assignProjects(String projectName) {
         

@@ -10,7 +10,7 @@ public class App {
         while(true) {
             
             System.out.println("1. Add Employee");
-            System.out.println("2. View Employee Details");
+            System.out.println("2. View Department Employees Details");
             System.out.println("3. Assign Project");
             System.out.println("4. Promote Employee");
             System.out.println("5. Exit");
@@ -38,7 +38,7 @@ public class App {
                         int managerAge = scanner.nextInt();
                         System.out.println("Enter the Department name : ");
                         String departmentNameInput = scanner.next();
-                        String departmentName = departmentNameInput.toLowerCase(); 
+                        String departmentName = departmentNameInput.toUpperCase(); 
                         Department department;
 
                         if (departments.containsKey(departmentName)) {
@@ -92,7 +92,7 @@ public class App {
                         String DeveloperNationality = scanner.next();
                         System.out.println("Enter the Department name : ");
                         String departmentNameInput = scanner.next();
-                        String departmentName = departmentNameInput.toLowerCase(); 
+                        String departmentName = departmentNameInput.toUpperCase(); 
                         Department department;
 
                         if (departments.containsKey(departmentName)) {
@@ -139,7 +139,7 @@ public class App {
                         int UniLevel = scanner.nextInt();
                         System.out.println("Enter the Department name : ");
                         String departmentNameInput = scanner.next();
-                        String departmentName = departmentNameInput.toLowerCase(); 
+                        String departmentName = departmentNameInput.toUpperCase(); 
                         Department department;
 
                         if (departments.containsKey(departmentName)) {
@@ -184,7 +184,7 @@ public class App {
                         int hourRate = scanner.nextInt();
                         System.out.println("Enter the Department name : ");
                         String departmentNameInput = scanner.next();
-                        String departmentName = departmentNameInput.toLowerCase(); 
+                        String departmentName = departmentNameInput.toUpperCase(); 
                         Department department;
 
                         if (departments.containsKey(departmentName)) {
@@ -208,8 +208,23 @@ public class App {
                     }
                     break;
                 case 2:
-                    // Logic to view employee details
-                    break;
+                
+                   if(departments.isEmpty()){
+                    System.out.println("There's no employees in this department ");
+                   }
+                   else{
+                    for(Map.Entry<String, Department> entry : departments.entrySet())
+                    {
+                        
+                        
+                        entry.getValue().displayDepartmentEmployees();  
+                    }
+                    }
+                   
+    
+                break;
+
+                    
                 case 3:
                     // Logic to assign project
                     break;
