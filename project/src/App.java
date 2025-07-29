@@ -226,7 +226,33 @@ public class App {
 
                     
                 case 3:
-                    // Logic to assign project
+                    System.out.println("Please enter the name , id and the department of the employee you want to assign project to : ");
+                    String nameEmp = scanner.next();
+                    int empId = scanner.nextInt();
+                    String departName = scanner.next();
+                    
+                    for(Map.Entry<String, Department> entry : departments.entrySet())
+                    {
+                        if(departName.equalsIgnoreCase(entry.getValue().departmentName))
+                        {
+                              for(Employee e : entry.getValue().employees)
+                              {
+                                   if(e.name.equalsIgnoreCase(nameEmp) && e.id == empId)
+                                   {
+                                        System.out.println("Please enter the name of the project : ");
+                                        String projectName = scanner.next();
+                                        if (e instanceof AssignProjects) {
+                                            ((AssignProjects) e).assignProjects(projectName);
+                                        } else {
+                                            System.out.println("This employee type cannot be promoted.");
+                                        }
+                                   }
+                              }
+       
+                        }
+                        
+                          
+                    }
                     break;
                 case 4:
                     System.out.println("Please enter the name and the department of the employee you want to promote : ");
