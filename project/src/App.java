@@ -1,20 +1,211 @@
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 public class App {
+
     public static void main(String[] args)  {
+        System.out.println("Welcome to the Company Management System");
+        Map<String, Department> departments = new HashMap<>();
+        Scanner scanner = new Scanner(System.in);
         while(true) {
-            System.out.println("Welcome to the Company Management System");
+            
             System.out.println("1. Add Employee");
             System.out.println("2. View Employee Details");
             System.out.println("3. Assign Project");
             System.out.println("4. Promote Employee");
             System.out.println("5. Exit");
 
-            Scanner scanner = new Scanner(System.in);
+            
             int choice = scanner.nextInt();
 
             switch (choice) {
                 case 1:
-                    // Logic to add employee
+                    System.out.println("Adding a new employee...");
+                    System.out.println("Please enter the type of employee :");
+                    System.out.println("1. Manager");
+                    System.out.println("2. Developer");
+                    System.out.println("3. Intern");
+                    System.out.println("4. Hourly Developer");
+                    String employeeType = scanner.next();
+
+                    if(employeeType.equals("1") || employeeType.equals("Manager")){
+                    
+                        System.out.println("Enter Manager Name: ");
+                        String managerName = scanner.next();
+                        System.out.println("Enter Manager ID: ");
+                        int managerId = scanner.nextInt();
+                        System.out.println("Enter Manager Age: ");
+                        int managerAge = scanner.nextInt();
+                        System.out.println("Enter the Department name : ");
+                        String departmentNameInput = scanner.next();
+                        String departmentName = departmentNameInput.toLowerCase(); 
+                        Department department;
+
+                        if (departments.containsKey(departmentName)) {
+                             department = departments.get(departmentName);
+                        } 
+                        else {
+                             System.out.println("Enter the Department Base Salary : ");
+                             int baseSalary = scanner.nextInt();
+                             department = new Department(departmentName, baseSalary);
+                             departments.put(departmentName, department);
+                         }
+
+                        System.out.println("Enter Manager Gender (Male/Female) : ");
+                        String managerSexInput = scanner.next();
+                        Employee.SEX managerSex;
+                        if (managerSexInput.equalsIgnoreCase("Male")) {
+                            managerSex = Employee.SEX.Male;
+                        } else if (managerSexInput.equalsIgnoreCase("Female")) {
+                            managerSex = Employee.SEX.Female;
+                        } else {
+                            System.out.println("Invalid gender input, defaulting to Male.");
+                            managerSex = Employee.SEX.Male;
+                        }
+                        System.out.println("Enter Manager Nationality: ");
+                        String managerNationality = scanner.next();
+                        System.out.println("Enter Manager Number of Teams Managed: ");
+                        int numberOfTeamsManaged = scanner.nextInt();
+                        Manager manager = new Manager(managerName, managerId, managerAge, managerSex, managerNationality,department, numberOfTeamsManaged );
+
+                        System.out.println("Manager added successfully.");
+
+                    } else if(employeeType.equals("2") || employeeType.equals("Developer")) {
+                        System.out.println("Enter Developer Name: ");
+                        String DeveloperName = scanner.next();
+                        System.out.println("Enter Developer ID: ");
+                        int DeveloperId = scanner.nextInt();
+                        System.out.println("Enter Developer Age: ");
+                        int DeveloperAge = scanner.nextInt();
+                        System.out.println("Enter Developer Gender (Male/Female) : ");
+                        String DeveloperSexInput = scanner.next();
+                        Employee.SEX DeveloperSex;
+                        if (DeveloperSexInput.equalsIgnoreCase("Male")) {
+                            DeveloperSex = Employee.SEX.Male;
+                        } else if (DeveloperSexInput.equalsIgnoreCase("Female")) {
+                            DeveloperSex = Employee.SEX.Female;
+                        } else {
+                            System.out.println("Invalid gender input, defaulting to Male.");
+                            DeveloperSex = Employee.SEX.Male;
+                        }
+                        System.out.println("Enter Developer Nationality: ");
+                        String DeveloperNationality = scanner.next();
+                        System.out.println("Enter the Department name : ");
+                        String departmentNameInput = scanner.next();
+                        String departmentName = departmentNameInput.toLowerCase(); 
+                        Department department;
+
+                        if (departments.containsKey(departmentName)) {
+                             department = departments.get(departmentName);
+                        } 
+                        else {
+                             System.out.println("Enter the Department Base Salary : ");
+                             int baseSalary = scanner.nextInt();
+                             department = new Department(departmentName, baseSalary);
+                             departments.put(departmentName, department);
+                         }
+
+                        
+                        Developer developer = new Developer(DeveloperName, DeveloperId, DeveloperAge, DeveloperSex, DeveloperNationality,department );
+
+                        System.out.println("Developer added successfully.");
+
+
+                    } else if(employeeType.equals("3") || employeeType.equals("Intern")) {
+                         System.out.println("Enter Intern Name: ");
+                        String InternName = scanner.next();
+                        System.out.println("Enter Intern ID: ");
+                        int InternId = scanner.nextInt();
+                        System.out.println("Enter Intern Age: ");
+                        int InternAge = scanner.nextInt();
+                        System.out.println("Enter Intern Gender (Male/Female) : ");
+                        String InternSexInput = scanner.next();
+                        Employee.SEX InternSex;
+                        if (InternSexInput.equalsIgnoreCase("Male")) {
+                            InternSex = Employee.SEX.Male;
+                        } else if (InternSexInput.equalsIgnoreCase("Female")) {
+                            InternSex = Employee.SEX.Female;
+                        } else {
+                            System.out.println("Invalid gender input, defaulting to Male.");
+                            InternSex = Employee.SEX.Male;
+                        }
+                        System.out.println("Enter Intern Nationality: ");
+                        String InternNationality = scanner.next();
+                        System.out.println("Enter the internship duration : ");
+                        int InternshipDuration = scanner.nextInt();
+                        System.out.println("Enter Mentor Name : ");
+                        String MentorName = scanner.next();
+                        System.out.println("Enter Uni level : ");
+                        int UniLevel = scanner.nextInt();
+                        System.out.println("Enter the Department name : ");
+                        String departmentNameInput = scanner.next();
+                        String departmentName = departmentNameInput.toLowerCase(); 
+                        Department department;
+
+                        if (departments.containsKey(departmentName)) {
+                             department = departments.get(departmentName);
+                        } 
+                        else {
+                             System.out.println("Enter the Department Base Salary : ");
+                             int baseSalary = scanner.nextInt();
+                             department = new Department(departmentName, baseSalary);
+                             departments.put(departmentName, department);
+                         }
+
+                        
+                        Intern intern = new Intern(InternName, InternId, InternAge, InternSex, InternNationality,InternshipDuration ,MentorName  , UniLevel , department );
+
+                        System.out.println("Intern added successfully.");
+
+
+                    } else if(employeeType.equals("4") || employeeType.equals("Hourly Developer")) {
+                        System.out.println("Enter HourlyDeveloper Name: ");
+                        String HourlyDeveloperName = scanner.next();
+                        System.out.println("Enter HourlyDeveloper ID: ");
+                        int HourlyDeveloperId = scanner.nextInt();
+                        System.out.println("Enter HourlyDeveloper Age: ");
+                        int HourlyDeveloperAge = scanner.nextInt();
+                        System.out.println("Enter HourlyDeveloper Gender (Male/Female) : ");
+                        String HourlyDeveloperSexInput = scanner.next();
+                        Employee.SEX HourlyDeveloperSex;
+                        if (HourlyDeveloperSexInput.equalsIgnoreCase("Male")) {
+                            HourlyDeveloperSex = Employee.SEX.Male;
+                        } else if (HourlyDeveloperSexInput.equalsIgnoreCase("Female")) {
+                            HourlyDeveloperSex = Employee.SEX.Female;
+                        } else {
+                            System.out.println("Invalid gender input, defaulting to Male.");
+                            HourlyDeveloperSex = Employee.SEX.Male;
+                        }
+                        System.out.println("Enter HourlyDeveloper Nationality: ");
+                        String HourlyDeveloperNationality = scanner.next();
+                        System.out.println("Enter number of hours : ");
+                        int numbofHours = scanner.nextInt();
+                        System.out.println("Enter the hourly rate : ");
+                        int hourRate = scanner.nextInt();
+                        System.out.println("Enter the Department name : ");
+                        String departmentNameInput = scanner.next();
+                        String departmentName = departmentNameInput.toLowerCase(); 
+                        Department department;
+
+                        if (departments.containsKey(departmentName)) {
+                             department = departments.get(departmentName);
+                        } 
+                        else {
+                             System.out.println("Enter the Department Base Salary : ");
+                             int baseSalary = scanner.nextInt();
+                             department = new Department(departmentName, baseSalary);
+                             departments.put(departmentName, department);
+                         }
+
+                        
+                        HourlyDeveloper Hourlydeveloper = new HourlyDeveloper(HourlyDeveloperName, HourlyDeveloperId, HourlyDeveloperAge, HourlyDeveloperSex, HourlyDeveloperNationality,department , numbofHours , hourRate );
+
+                        System.out.println("HourlyDeveloper added successfully.");
+
+
+                    } else {
+                        System.out.println("Invalid employee type selected.");
+                    }
                     break;
                 case 2:
                     // Logic to view employee details

@@ -1,4 +1,4 @@
-public class HourlyDevolper extends Employee implements AssignProjects , Promote {
+public class HourlyDeveloper extends Employee implements AssignProjects , Promote {
    
     private int numberOfHoursWorked;
     private float hourlyRate;
@@ -7,10 +7,10 @@ public class HourlyDevolper extends Employee implements AssignProjects , Promote
     private static int developerCount = 0;
 
 
-    public HourlyDevolper() {
+    public HourlyDeveloper() {
     
     }
-    public HourlyDevolper(String name , int id , int age , SEX sex , String nationality, Department department, int numberOfHoursWorked, float hourlyRate) {
+    public HourlyDeveloper(String name , int id , int age , SEX sex , String nationality, Department department, int numberOfHoursWorked, float hourlyRate) {
         super(name, id, age, sex, nationality);
         this.department = department;
         this.numberOfHoursWorked = numberOfHoursWorked;

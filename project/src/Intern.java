@@ -1,14 +1,14 @@
-public class Interns extends Employee implements AssignProjects , Promote  {
-    private String internshipDuration;
+public class Intern extends Employee implements AssignProjects , Promote  {
+    private int internshipDuration;
     private String mentorName;
     private int UniLevel;
     private String title="Intern";
     private float bonus=1.f;
     private static int internCount = 0;
-    public Interns() {
+    public Intern() {
         internCount++;
     }
-    public Interns (String name , int id , int age , SEX sex , String nationality, String internshipDuration, String mentorName , int UniLevel, Department department)
+    public Intern (String name , int id , int age , SEX sex , String nationality, int internshipDuration, String mentorName , int UniLevel, Department department)
     {
         super(name, id, age, sex, nationality);
         this.internshipDuration = internshipDuration;
@@ -21,10 +21,10 @@ public class Interns extends Employee implements AssignProjects , Promote  {
     public static int getInternCount() {
         return internCount;
     }
-    public void setInternshipDuration(String internshipDuration) {
+    public void setInternshipDuration(int internshipDuration) {
         this.internshipDuration = internshipDuration;
     }
-    public String getInternshipDuration() {
+    public int getInternshipDuration() {
         return internshipDuration;
     }
     public void setMentorName(String mentorName) {
