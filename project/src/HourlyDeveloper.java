@@ -3,7 +3,7 @@ public class HourlyDeveloper extends Employee implements AssignProjects , Promot
     private int numberOfHoursWorked;
     private float hourlyRate;
     private String title="Hourly Developer";
-    private float bonus=1.f;
+    private double bonus=1.f;
     private static int developerCount = 0;
 
 
@@ -36,8 +36,8 @@ public class HourlyDeveloper extends Employee implements AssignProjects , Promot
         return hourlyRate;
     }
   
-    @Override public float calculateSalary() {
-        return numberOfHoursWorked * hourlyRate;
+    @Override public double calculateSalary() {
+        return numberOfHoursWorked * hourlyRate * bonus;
     }
     @Override public void assignProjects(String projectName) {
         
@@ -70,6 +70,6 @@ public class HourlyDeveloper extends Employee implements AssignProjects , Promot
         System.out.println("Calculated Salary: " + calculateSalary());
         System.out.println("Number of Hours Worked: " + getNumberOfHoursWorked());
         System.out.println("Assigned Project: " + getAssignedProjects());
-        System.out.println("-----------------------------");
+        
     }
 }

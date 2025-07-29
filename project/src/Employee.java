@@ -67,7 +67,7 @@ public abstract class Employee {
     }
 
 
-    public abstract float calculateSalary();
+    public abstract double calculateSalary();
     
 
     public void employeeDetails() {

@@ -2,7 +2,7 @@ public class Manager extends Employee implements AssignProjects , Promote {
     
     private int numberOfTeamsManaged;
     private String title="Manager";
-    private float bonus=1.f;
+    private double bonus=1;
     private static int developerCount = 0;
 
 
@@ -25,8 +25,8 @@ public class Manager extends Employee implements AssignProjects , Promote {
     public int getNumberOfTeamsManaged() {
         return numberOfTeamsManaged;
     }
-    @Override public float calculateSalary() {
-        return numberOfTeamsManaged * department.getBaseSalary() * 1.5f * bonus; 
+    @Override public double calculateSalary() {
+        return numberOfTeamsManaged * department.getBaseSalary() * 1.5 * bonus; 
     }
      @Override public void assignProjects(String projectName) {
         
@@ -58,7 +58,7 @@ public class Manager extends Employee implements AssignProjects , Promote {
         System.out.println("Assigned Projects: " + getAssignedProjects());
         System.out.println("Calculated Salary: " + calculateSalary());
         System.out.println("Number of Teams Managed: " + getNumberOfTeamsManaged());
-        System.out.println("-----------------------------");
+ 
     }
     
 

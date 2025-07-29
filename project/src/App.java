@@ -8,13 +8,14 @@ public class App {
         Map<String, Department> departments = new HashMap<>();
         Scanner scanner = new Scanner(System.in);
         while(true) {
-            
+            System.out.println("-----------------------------------");
             System.out.println("1. Add Employee");
             System.out.println("2. View Department Employees Details");
             System.out.println("3. Assign Project");
             System.out.println("4. Promote Employee");
-            System.out.println("5. Exit");
-
+            System.out.println("5. Print the number of employees");
+            System.out.println("6. Exit");
+            System.out.println("-----------------------------------");
             
             int choice = scanner.nextInt();
 
@@ -26,6 +27,7 @@ public class App {
                     System.out.println("2. Developer");
                     System.out.println("3. Intern");
                     System.out.println("4. Hourly Developer");
+                    System.out.println("-----------------------------------");
                     String employeeType = scanner.next();
 
                     if(employeeType.equals("1") || employeeType.equals("Manager")){
@@ -36,6 +38,22 @@ public class App {
                         int managerId = scanner.nextInt();
                         System.out.println("Enter Manager Age: ");
                         int managerAge = scanner.nextInt();
+                        System.out.println("Enter Manager Nationality: ");
+                        String managerNationality = scanner.next();
+                        System.out.println("Enter Manager Gender (Male/Female) : ");
+                        String managerSexInput = scanner.next();
+                        managerSexInput.toUpperCase();
+                        Employee.SEX managerSex;
+                        if (managerSexInput.equalsIgnoreCase("Male")) {
+                            managerSex = Employee.SEX.Male;
+                        } 
+                        else if (managerSexInput.equalsIgnoreCase("Female")) {
+                            managerSex = Employee.SEX.Female;
+                        } 
+                        else {
+                            System.out.println("Invalid gender input, defaulting to Male.");
+                            managerSex = Employee.SEX.Male;
+                        }
                         System.out.println("Enter the Department name : ");
                         String departmentNameInput = scanner.next();
                         String departmentName = departmentNameInput.toUpperCase(); 
@@ -51,26 +69,16 @@ public class App {
                              departments.put(departmentName, department);
                          }
 
-                        System.out.println("Enter Manager Gender (Male/Female) : ");
-                        String managerSexInput = scanner.next();
-                        Employee.SEX managerSex;
-                        if (managerSexInput.equalsIgnoreCase("Male")) {
-                            managerSex = Employee.SEX.Male;
-                        } else if (managerSexInput.equalsIgnoreCase("Female")) {
-                            managerSex = Employee.SEX.Female;
-                        } else {
-                            System.out.println("Invalid gender input, defaulting to Male.");
-                            managerSex = Employee.SEX.Male;
-                        }
-                        System.out.println("Enter Manager Nationality: ");
-                        String managerNationality = scanner.next();
+                        
+                        
                         System.out.println("Enter Manager Number of Teams Managed: ");
                         int numberOfTeamsManaged = scanner.nextInt();
                         Manager manager = new Manager(managerName, managerId, managerAge, managerSex, managerNationality,department, numberOfTeamsManaged );
 
                         System.out.println("Manager added successfully.");
 
-                    } else if(employeeType.equals("2") || employeeType.equals("Developer")) {
+                    } 
+                    else if(employeeType.equals("2") || employeeType.equals("Developer")) {
                         System.out.println("Enter Developer Name: ");
                         String DeveloperName = scanner.next();
                         System.out.println("Enter Developer ID: ");
@@ -79,12 +87,15 @@ public class App {
                         int DeveloperAge = scanner.nextInt();
                         System.out.println("Enter Developer Gender (Male/Female) : ");
                         String DeveloperSexInput = scanner.next();
+                        DeveloperSexInput.toUpperCase();
                         Employee.SEX DeveloperSex;
                         if (DeveloperSexInput.equalsIgnoreCase("Male")) {
                             DeveloperSex = Employee.SEX.Male;
-                        } else if (DeveloperSexInput.equalsIgnoreCase("Female")) {
+                        } 
+                        else if (DeveloperSexInput.equalsIgnoreCase("Female")) {
                             DeveloperSex = Employee.SEX.Female;
-                        } else {
+                        } 
+                        else {
                             System.out.println("Invalid gender input, defaulting to Male.");
                             DeveloperSex = Employee.SEX.Male;
                         }
@@ -111,7 +122,8 @@ public class App {
                         System.out.println("Developer added successfully.");
 
 
-                    } else if(employeeType.equals("3") || employeeType.equals("Intern")) {
+                    } 
+                    else if(employeeType.equals("3") || employeeType.equals("Intern")) {
                          System.out.println("Enter Intern Name: ");
                         String InternName = scanner.next();
                         System.out.println("Enter Intern ID: ");
@@ -120,12 +132,15 @@ public class App {
                         int InternAge = scanner.nextInt();
                         System.out.println("Enter Intern Gender (Male/Female) : ");
                         String InternSexInput = scanner.next();
+                        InternSexInput.toUpperCase();
                         Employee.SEX InternSex;
                         if (InternSexInput.equalsIgnoreCase("Male")) {
                             InternSex = Employee.SEX.Male;
-                        } else if (InternSexInput.equalsIgnoreCase("Female")) {
+                        } 
+                        else if (InternSexInput.equalsIgnoreCase("Female")) {
                             InternSex = Employee.SEX.Female;
-                        } else {
+                        } 
+                        else {
                             System.out.println("Invalid gender input, defaulting to Male.");
                             InternSex = Employee.SEX.Male;
                         }
@@ -158,7 +173,8 @@ public class App {
                         System.out.println("Intern added successfully.");
 
 
-                    } else if(employeeType.equals("4") || employeeType.equals("Hourly Developer")) {
+                    } 
+                    else if(employeeType.equals("4") || employeeType.equals("Hourly Developer")) {
                         System.out.println("Enter HourlyDeveloper Name: ");
                         String HourlyDeveloperName = scanner.next();
                         System.out.println("Enter HourlyDeveloper ID: ");
@@ -167,12 +183,15 @@ public class App {
                         int HourlyDeveloperAge = scanner.nextInt();
                         System.out.println("Enter HourlyDeveloper Gender (Male/Female) : ");
                         String HourlyDeveloperSexInput = scanner.next();
+                        HourlyDeveloperSexInput.toUpperCase();
                         Employee.SEX HourlyDeveloperSex;
                         if (HourlyDeveloperSexInput.equalsIgnoreCase("Male")) {
                             HourlyDeveloperSex = Employee.SEX.Male;
-                        } else if (HourlyDeveloperSexInput.equalsIgnoreCase("Female")) {
+                        } 
+                        else if (HourlyDeveloperSexInput.equalsIgnoreCase("Female")) {
                             HourlyDeveloperSex = Employee.SEX.Female;
-                        } else {
+                        } 
+                        else {
                             System.out.println("Invalid gender input, defaulting to Male.");
                             HourlyDeveloperSex = Employee.SEX.Male;
                         }
@@ -203,7 +222,8 @@ public class App {
                         System.out.println("HourlyDeveloper added successfully.");
 
 
-                    } else {
+                    } 
+                    else {
                         System.out.println("Invalid employee type selected.");
                     }
                     break;
@@ -285,7 +305,39 @@ public class App {
                     
 
                     break;
+
                 case 5:
+                // System.out.println("1. Print a specific department number of employees  ");
+                // System.out.println("2. Print the number of all company employees ");
+                // int thisChoice = scanner.nextInt();
+                // if(thisChoice == 1){
+                
+                //      System.out.println("Please enter the name of the department : ");
+                //     String namedept = scanner.next();
+                    
+                //     for(Map.Entry<String, Department> entry : departments.entrySet())
+                //     {
+                //         if(namedept.equalsIgnoreCase(entry.getValue().departmentName))
+                //         {
+                //              System.out.println(entry.)
+                                   
+       
+                //         }
+                        
+                          
+                //     }
+
+                // }
+                // else if (thisChoice == 2){
+
+                // }
+                // else{
+                //     System.out.println("Invalid");
+                // }
+
+                //     break;
+
+                case 6:
                     System.out.println("Exiting...");
                     return;
                 default:
