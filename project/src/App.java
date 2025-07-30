@@ -13,8 +13,7 @@ public class App {
             System.out.println("2. View Department Employees Details");
             System.out.println("3. Assign Project");
             System.out.println("4. Promote Employee");
-            System.out.println("5. Print the number of employees");
-            System.out.println("6. Exit");
+            System.out.println("5. Exit");
             System.out.println("-----------------------------------");
             System.out.print("Select : ");
             
@@ -313,16 +312,6 @@ public class App {
                     break;
 
                 case 5:
-
-            //    Developer d1 = new Developer();
-            //    Intern I1 = new Intern();
-            //    Manager m1 = new Manager();
-            //    HourlyDeveloper hd = new HourlyDeveloper();
-            //    System.out.println("The total number of employees in the company is : "+(d1.getDeveloperCount()-1)+(I1.getInternCount()-1)+(m1.getManagerCount()-1)+(hd.getHourlyDevelopercount()-1));
-               
-                    break;
-
-                case 6:
                     System.out.println("Exiting...");
                     return;
                 default:
