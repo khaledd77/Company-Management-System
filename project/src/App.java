@@ -58,6 +58,7 @@ public class App {
                         }
                         System.out.println("Enter the Department name : ");
                         String departmentNameInput = scanner.next();
+                        departmentNameInput.toUpperCase();
                         String departmentName = departmentNameInput.toUpperCase(); 
                         Department department;
 
@@ -252,6 +253,7 @@ public class App {
                     String nameEmp = scanner.next();
                     int empId = scanner.nextInt();
                     String departName = scanner.next();
+                    departName.toUpperCase();
                     
                     for(Map.Entry<String, Department> entry : departments.entrySet())
                     {
@@ -281,6 +283,7 @@ public class App {
                     String nameString = scanner.next();
                     int idEmp = scanner.nextInt();
                     String deptName = scanner.next();
+                    deptName.toUpperCase();
                     for(Map.Entry<String, Department> entry : departments.entrySet())
                     {
                         if(deptName.equalsIgnoreCase(entry.getValue().departmentName) )
