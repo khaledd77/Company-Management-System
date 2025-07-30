@@ -3,12 +3,12 @@ public class HourlyDeveloper extends Employee implements AssignProjects , Promot
     private int numberOfHoursWorked;
     private float hourlyRate;
     private String title="Hourly Developer";
-    private double bonus=1.f;
-    private static int developerCount = 0;
+    private double bonus=0;
+    private static int HourlyDevelopercount = 0;
 
 
     public HourlyDeveloper() {
-    
+           HourlyDevelopercount++;
     }
     public HourlyDeveloper(String name , int id , int age , SEX sex , String nationality, Department department, int numberOfHoursWorked, float hourlyRate) {
         super(name, id, age, sex, nationality);
@@ -16,10 +16,10 @@ public class HourlyDeveloper extends Employee implements AssignProjects , Promot
         this.numberOfHoursWorked = numberOfHoursWorked;
         this.hourlyRate = hourlyRate;
         department.addEmployee(this);
-        developerCount++;
+        HourlyDevelopercount++;
     }
-    public int getDeveloperCount() {
-        return developerCount;
+    public int getHourlyDevelopercount() {
+        return HourlyDevelopercount;
     }
     public void setNumberOfHoursWorked(int numberOfHoursWorked) {
         this.numberOfHoursWorked = numberOfHoursWorked;
@@ -37,7 +37,7 @@ public class HourlyDeveloper extends Employee implements AssignProjects , Promot
     }
   
     @Override public double calculateSalary() {
-        return numberOfHoursWorked * hourlyRate * bonus;
+        return numberOfHoursWorked * hourlyRate + bonus;
     }
     @Override public void assignProjects(String projectName) {
         

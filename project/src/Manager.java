@@ -2,22 +2,22 @@ public class Manager extends Employee implements AssignProjects , Promote {
     
     private int numberOfTeamsManaged;
     private String title="Manager";
-    private double bonus=1;
-    private static int developerCount = 0;
+    private double bonus=0;
+    private static int ManagerCount = 0;
 
 
     public Manager() {
-        developerCount++;
+        ManagerCount++;
     }
     public Manager(String name , int id , int age , SEX sex , String nationality, Department department, int numberOfTeamsManaged) {
         super(name, id, age, sex, nationality);
         this.department = department;
         this.numberOfTeamsManaged = numberOfTeamsManaged;
         department.addEmployee(this);
-        developerCount++;
+        ManagerCount++;
     }
-    public static int getDeveloperCount() {
-        return developerCount;
+    public static int getManagerCount() {
+        return ManagerCount;
     }
     public void setNumberOfTeamsManaged(int numberOfTeamsManaged) {
         this.numberOfTeamsManaged = numberOfTeamsManaged;
@@ -26,7 +26,7 @@ public class Manager extends Employee implements AssignProjects , Promote {
         return numberOfTeamsManaged;
     }
     @Override public double calculateSalary() {
-        return numberOfTeamsManaged * department.getBaseSalary() * 1.5 * bonus; 
+        return numberOfTeamsManaged * department.getBaseSalary() * 1.5 + bonus; 
     }
      @Override public void assignProjects(String projectName) {
         

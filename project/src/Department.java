@@ -3,7 +3,7 @@ public class Department {
     
     protected String departmentName;
     protected String departmentHead;
-    protected int baseSalary;
+    protected double baseSalary;
      ArrayList<Employee> employees= new ArrayList<>();
 
     public Department() {
@@ -21,7 +21,7 @@ public class Department {
     public void setBaseSalary(int baseSalary) {
         this.baseSalary = baseSalary;
     }
-    public int getBaseSalary() {
+    public double getBaseSalary() {
         return baseSalary;
     }
     public void setDepartmentHead(String departmentHead) {

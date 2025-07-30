@@ -3,7 +3,7 @@ public class Intern extends Employee implements AssignProjects , Promote  {
     private String mentorName;
     private int UniLevel;
     private String title="Intern";
-    private double bonus=1;
+    private double bonus=0;
     private static int internCount = 0;
     public Intern() {
         internCount++;
@@ -40,7 +40,7 @@ public class Intern extends Employee implements AssignProjects , Promote  {
         return UniLevel;
     }
     @Override public double calculateSalary() {
-        return department.getBaseSalary() * 0.25f * bonus; 
+        return department.getBaseSalary() * 0.25f + bonus; 
     }
     @Override public void assignProjects(String projectName) {
         

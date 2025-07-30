@@ -2,7 +2,7 @@ public class Developer extends Employee implements AssignProjects , Promote {
 
     private static int developerCount = 0;
     private String title="Developer";
-    private double bonus=1.f;
+    private double bonus=0;
 
     public Developer()
     {
@@ -22,9 +22,9 @@ public class Developer extends Employee implements AssignProjects , Promote {
     
     @Override public double calculateSalary() {
         if(assignedProjectsCount!=0)
-        return department.getBaseSalary()*assignedProjectsCount*bonus;
+        return department.getBaseSalary()*assignedProjectsCount+bonus;
         else
-        return department.getBaseSalary()*bonus;
+        return department.getBaseSalary()+bonus;
     }
     @Override public void assignProjects(String projectName) {
         

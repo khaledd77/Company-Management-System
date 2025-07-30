@@ -16,6 +16,7 @@ public class App {
             System.out.println("5. Print the number of employees");
             System.out.println("6. Exit");
             System.out.println("-----------------------------------");
+            System.out.print("Select : ");
             
             int choice = scanner.nextInt();
 
@@ -28,6 +29,7 @@ public class App {
                     System.out.println("3. Intern");
                     System.out.println("4. Hourly Developer");
                     System.out.println("-----------------------------------");
+                    System.out.print("Select : ");
                     String employeeType = scanner.next();
 
                     if(employeeType.equals("1") || employeeType.equals("Manager")){
@@ -275,16 +277,17 @@ public class App {
                     }
                     break;
                 case 4:
-                    System.out.println("Please enter the name and the department of the employee you want to promote : ");
+                    System.out.println("Please enter the name , the id and the department of the employee you want to promote : ");
                     String nameString = scanner.next();
+                    int idEmp = scanner.nextInt();
                     String deptName = scanner.next();
                     for(Map.Entry<String, Department> entry : departments.entrySet())
                     {
-                        if(deptName.equalsIgnoreCase(entry.getValue().departmentName))
+                        if(deptName.equalsIgnoreCase(entry.getValue().departmentName) )
                         {
                               for(Employee e : entry.getValue().employees)
                               {
-                                   if(e.name.equalsIgnoreCase(nameString))
+                                   if(e.name.equalsIgnoreCase(nameString) && idEmp == e.id)
                                    {
                                         System.out.println("Enter the new title : ");
                                         String newTitle = scanner.next();
@@ -307,35 +310,14 @@ public class App {
                     break;
 
                 case 5:
-                // System.out.println("1. Print a specific department number of employees  ");
-                // System.out.println("2. Print the number of all company employees ");
-                // int thisChoice = scanner.nextInt();
-                // if(thisChoice == 1){
-                
-                //      System.out.println("Please enter the name of the department : ");
-                //     String namedept = scanner.next();
-                    
-                //     for(Map.Entry<String, Department> entry : departments.entrySet())
-                //     {
-                //         if(namedept.equalsIgnoreCase(entry.getValue().departmentName))
-                //         {
-                //              System.out.println(entry.)
-                                   
-       
-                //         }
-                        
-                          
-                //     }
 
-                // }
-                // else if (thisChoice == 2){
-
-                // }
-                // else{
-                //     System.out.println("Invalid");
-                // }
-
-                //     break;
+            //    Developer d1 = new Developer();
+            //    Intern I1 = new Intern();
+            //    Manager m1 = new Manager();
+            //    HourlyDeveloper hd = new HourlyDeveloper();
+            //    System.out.println("The total number of employees in the company is : "+(d1.getDeveloperCount()-1)+(I1.getInternCount()-1)+(m1.getManagerCount()-1)+(hd.getHourlyDevelopercount()-1));
+               
+                    break;
 
                 case 6:
                     System.out.println("Exiting...");
