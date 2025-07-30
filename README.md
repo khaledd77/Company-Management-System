@@ -88,4 +88,4 @@ src/
 
 **Khaled Ghareeb**  
 Computer Science Student  
-Object-Oriented Programming – Final Project, 2025
+Object-Oriented Programming Project
