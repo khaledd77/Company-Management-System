@@ -42,8 +42,8 @@ Each type has its own attributes and behavior defined through class inheritance 
 - Promotion logic is encapsulated via the `Promote` interface.
 
 ### 5. Reporting & Statistics
-- View all employees in a specific department.
-- Retrieve individual employee details on demand.
+- View  departments all employees.
+
 
 ---
 
