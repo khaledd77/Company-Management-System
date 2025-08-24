@@ -84,8 +84,3 @@ src/
 
 ---
 
-## Author
-
-**Khaled Ghareeb**  
-Computer Science Student  
-Object-Oriented Programming Project
