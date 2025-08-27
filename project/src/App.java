@@ -43,7 +43,6 @@ public class App {
                         String managerNationality = scanner.next();
                         System.out.println("Enter Manager Gender (Male/Female) : ");
                         String managerSexInput = scanner.next();
-                        managerSexInput.toUpperCase();
                         Employee.SEX managerSex;
                         if (managerSexInput.equalsIgnoreCase("Male")) {
                             managerSex = Employee.SEX.Male;
@@ -57,18 +56,17 @@ public class App {
                         }
                         System.out.println("Enter the Department name : ");
                         String departmentNameInput = scanner.next();
-                        departmentNameInput.toUpperCase();
-                        String departmentName = departmentNameInput.toUpperCase(); 
+                        departmentNameInput.toUpperCase(); 
                         Department department;
 
-                        if (departments.containsKey(departmentName)) {
-                             department = departments.get(departmentName);
+                        if (departments.containsKey(departmentNameInput)) {
+                             department = departments.get(departmentNameInput);
                         } 
                         else {
                              System.out.println("Enter the Department Base Salary : ");
                              int baseSalary = scanner.nextInt();
-                             department = new Department(departmentName, baseSalary);
-                             departments.put(departmentName, department);
+                             department = new Department(departmentNameInput, baseSalary);
+                             departments.put(departmentNameInput, department);
                          }
 
                         
@@ -89,7 +87,6 @@ public class App {
                         int DeveloperAge = scanner.nextInt();
                         System.out.println("Enter Developer Gender (Male/Female) : ");
                         String DeveloperSexInput = scanner.next();
-                        DeveloperSexInput.toUpperCase();
                         Employee.SEX DeveloperSex;
                         if (DeveloperSexInput.equalsIgnoreCase("Male")) {
                             DeveloperSex = Employee.SEX.Male;
@@ -105,17 +102,17 @@ public class App {
                         String DeveloperNationality = scanner.next();
                         System.out.println("Enter the Department name : ");
                         String departmentNameInput = scanner.next();
-                        String departmentName = departmentNameInput.toUpperCase(); 
+                         departmentNameInput.toUpperCase(); 
                         Department department;
 
-                        if (departments.containsKey(departmentName)) {
-                             department = departments.get(departmentName);
+                        if (departments.containsKey(departmentNameInput)) {
+                             department = departments.get(departmentNameInput);
                         } 
                         else {
                              System.out.println("Enter the Department Base Salary : ");
                              int baseSalary = scanner.nextInt();
-                             department = new Department(departmentName, baseSalary);
-                             departments.put(departmentName, department);
+                             department = new Department(departmentNameInput, baseSalary);
+                             departments.put(departmentNameInput, department);
                          }
 
                         
@@ -134,7 +131,6 @@ public class App {
                         int InternAge = scanner.nextInt();
                         System.out.println("Enter Intern Gender (Male/Female) : ");
                         String InternSexInput = scanner.next();
-                        InternSexInput.toUpperCase();
                         Employee.SEX InternSex;
                         if (InternSexInput.equalsIgnoreCase("Male")) {
                             InternSex = Employee.SEX.Male;
@@ -185,7 +181,6 @@ public class App {
                         int HourlyDeveloperAge = scanner.nextInt();
                         System.out.println("Enter HourlyDeveloper Gender (Male/Female) : ");
                         String HourlyDeveloperSexInput = scanner.next();
-                        HourlyDeveloperSexInput.toUpperCase();
                         Employee.SEX HourlyDeveloperSex;
                         if (HourlyDeveloperSexInput.equalsIgnoreCase("Male")) {
                             HourlyDeveloperSex = Employee.SEX.Male;
@@ -205,17 +200,17 @@ public class App {
                         int hourRate = scanner.nextInt();
                         System.out.println("Enter the Department name : ");
                         String departmentNameInput = scanner.next();
-                        String departmentName = departmentNameInput.toUpperCase(); 
+                        departmentNameInput.toUpperCase(); 
                         Department department;
 
-                        if (departments.containsKey(departmentName)) {
-                             department = departments.get(departmentName);
+                        if (departments.containsKey(departmentNameInput)) {
+                             department = departments.get(departmentNameInput);
                         } 
                         else {
                              System.out.println("Enter the Department Base Salary : ");
                              int baseSalary = scanner.nextInt();
-                             department = new Department(departmentName, baseSalary);
-                             departments.put(departmentName, department);
+                             department = new Department(departmentNameInput, baseSalary);
+                             departments.put(departmentNameInput, department);
                          }
 
                         
@@ -238,7 +233,6 @@ public class App {
                     for(Map.Entry<String, Department> entry : departments.entrySet())
                     {
                         
-                        
                         entry.getValue().displayDepartmentEmployees();  
                     }
                     }
@@ -252,7 +246,6 @@ public class App {
                     String nameEmp = scanner.next();
                     int empId = scanner.nextInt();
                     String departName = scanner.next();
-                    departName.toUpperCase();
                     
                     for(Map.Entry<String, Department> entry : departments.entrySet())
                     {
@@ -267,7 +260,7 @@ public class App {
                                         if (e instanceof AssignProjects) {
                                             ((AssignProjects) e).assignProjects(projectName);
                                         } else {
-                                            System.out.println("This employee type cannot be promoted.");
+                                            System.out.println("This employee type cannot be assigned for this project.");
                                         }
                                    }
                               }
@@ -282,7 +275,7 @@ public class App {
                     String nameString = scanner.next();
                     int idEmp = scanner.nextInt();
                     String deptName = scanner.next();
-                    deptName.toUpperCase();
+                    
                     for(Map.Entry<String, Department> entry : departments.entrySet())
                     {
                         if(deptName.equalsIgnoreCase(entry.getValue().departmentName) )
